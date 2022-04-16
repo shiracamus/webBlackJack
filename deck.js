@@ -11,9 +11,9 @@ export class Deck{
         this.s08 = new Card(8,"./0ic_middle/s08.png");
         this.s09 = new Card(9,"./0ic_middle/s09.png");
         this.s10 = new Card(10,"./0ic_middle/s10.png");
-        this.s11 = new Card(11,"./0ic_middle/s11.png");
-        this.s12 = new Card(12,"./0ic_middle/s12.png");
-        this.s13 = new Card(13,"./0ic_middle/s13.png");
+        this.s11 = new Card(10,"./0ic_middle/s11.png");
+        this.s12 = new Card(10,"./0ic_middle/s12.png");
+        this.s13 = new Card(10,"./0ic_middle/s13.png");
         this.c01 = new Card(1,"./0ic_middle/c01.png");
         this.c02 = new Card(2,"./0ic_middle/c02.png");
         this.c03 = new Card(3,"./0ic_middle/c03.png");
@@ -24,9 +24,9 @@ export class Deck{
         this.c08 = new Card(8,"./0ic_middle/c08.png");
         this.c09 = new Card(9,"./0ic_middle/c09.png");
         this.c10 = new Card(10,"./0ic_middle/c10.png");
-        this.c11 = new Card(11,"./0ic_middle/c11.png");
-        this.c12 = new Card(12,"./0ic_middle/c12.png");
-        this.c13 = new Card(13,"./0ic_middle/c13.png");
+        this.c11 = new Card(10,"./0ic_middle/c11.png");
+        this.c12 = new Card(10,"./0ic_middle/c12.png");
+        this.c13 = new Card(10,"./0ic_middle/c13.png");
         this.d01 = new Card(1,"./0ic_middle/d01.png");
         this.d02 = new Card(2,"./0ic_middle/d02.png");
         this.d03 = new Card(3,"./0ic_middle/d03.png");
@@ -37,9 +37,9 @@ export class Deck{
         this.d08 = new Card(8,"./0ic_middle/d08.png");
         this.d09 = new Card(9,"./0ic_middle/d09.png");
         this.d10 = new Card(10,"./0ic_middle/d10.png");
-        this.d11 = new Card(11,"./0ic_middle/d11.png");
-        this.d12 = new Card(12,"./0ic_middle/d12.png");
-        this.d13 = new Card(13,"./0ic_middle/d13.png");
+        this.d11 = new Card(10,"./0ic_middle/d11.png");
+        this.d12 = new Card(10,"./0ic_middle/d12.png");
+        this.d13 = new Card(10,"./0ic_middle/d13.png");
         this.h01 = new Card(1,"./0ic_middle/h01.png");
         this.h02 = new Card(2,"./0ic_middle/h02.png");
         this.h03 = new Card(3,"./0ic_middle/h03.png");
@@ -50,9 +50,9 @@ export class Deck{
         this.h08 = new Card(8,"./0ic_middle/h08.png");
         this.h09 = new Card(9,"./0ic_middle/h09.png");
         this.h10 = new Card(10,"./0ic_middle/h10.png");
-        this.h11 = new Card(11,"./0ic_middle/h11.png");
-        this.h12 = new Card(12,"./0ic_middle/h12.png");
-        this.h13 = new Card(13,"./0ic_middle/h13.png");
+        this.h11 = new Card(10,"./0ic_middle/h11.png");
+        this.h12 = new Card(10,"./0ic_middle/h12.png");
+        this.h13 = new Card(10,"./0ic_middle/h13.png");
 
         this.list = [
             this.s01,
