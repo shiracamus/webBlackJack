@@ -113,7 +113,6 @@ export class Deck{
     }
 
     // Fisher-Yatesシャッフル
-
     shuffle(array) {
         for(var i = (array.length - 1); 0 < i; i--){
             // 0〜(i+1)の範囲で値を取得
@@ -127,15 +126,11 @@ export class Deck{
         return;
     }
 
-    pickupCard(){
-        if (this.counter !== undefined && this.list !== undefined) {
-            return this.list[this.counter];
-        }
-    }
-    plusCounter(){
-        if (this.counter !== undefined) {
-            this.counter+=1;
-        }
-    }
+    //カードを一枚近く取り出す
+    //counterと同じ場所のカードを取り出す
+    pickupCard(){return this.list[this.counter];}
+
+    //counterを1増やす
+    plusCounter(){this.counter+=1;}
 }
 
