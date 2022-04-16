@@ -1,11 +1,17 @@
-export class player{
+export class Player{
     constructor() {
         this.myDeck = [];
         this.sum = 0;
-        this.bj =false;
+        this.sumAIn = 0;
+
+        //フラグ
+        //今回は全部フラグで管理しようと思う -> 統一性を持たせるため
+        //全部ゲッターでとる
         this.AInMyDeckFlag =false;
         this.tenInMyDeckFlag = false;
         this.burstFlag=false;
+        this.bjFlag =false;
+
     }
 
     //引数に受け取ったカードを加える
@@ -14,37 +20,61 @@ export class player{
     //myDeck内のカードの合計を計算
     sumCard(){
         this.sum=0;
-        for (let i = 0; i < this.myDeck.length; i++) {
-            this.sum+=this.myDeck[i].value;
-        }
-        return this.sum;
+        for (let i = 0; i < this.myDeck.length; i++) {this.sum+=this.myDeck[i].value;}
     }
+
+    //myDeck内にAがある時の計算
+    sumCardAIn(){
+        if (this.AInMyDeckFlag == true) {
+            this.sumAIn = 0; //一回リセットしてから
+            this.sumAIn = this.sum + 11;
+        }
+    }
+
 
     //myDeckの中にAが入っているか確認する
     checkAInMyDeck(){
         for (let i = 0; i < this.myDeck.length; i++) {
-            if (this.myDeck[i].value==1) {this.AInMyDeckFlag=true;}
+            if (this.myDeck[i].value==1) {
+                this.AInMyDeckFlag=true;
+                return;
+            }
         }
+        this.AInMyDeckFlag=false;
     }
 
     //myDeckの中に10札が入っているか確認する
     checkTenInMyDeck(){
         for (let i = 0; i < this.myDeck.length; i++) {
-            if (this.myDeck[i].value==10) {this.tenInMyDeckFlag=true;}
+            if (this.myDeck[i].value==10) {
+                this.tenInMyDeckFlag=true;
+                return;
+            }
         }
+        this.tenInMyDeckFlag=false;
     }
 
     //BJを達成しているか確認調べる
     checkBJ(){
         this.checkAInMyDeck();
         this.checkTenInMyDeck();
-        if (this.myDeck.length==2 && this.AInMyDeckFlag == true && this.tenInMyDeckFlag==true) {return true;}
-        return false;
+        if (this.myDeck.length==2 &&
+            this.AInMyDeckFlag == true &&
+            this.tenInMyDeckFlag==true) {this.bjFlag = true;}
+        this.bjFlag = false;
     }
 
     //自分がバーストしているか調べる
     checkBurst(){
-        if (this.sum > 21) {return true;}
-        return false;
+        if (this.sum > 21) {this.burstFlag = true;}
+        this.burstFlag = false;
     }
+
+    //ゲッター
+    getMydeck(){return this.myDeck;}
+    getAInMyDeckFlag(){return this.AInMyDeckFlag;}
+    gettenInMyDeckFlag(){return this.tenInMyDeckFlag;}
+    getburstFlag(){return this.burstFlag;}
+    getbjFlag(){return this.bjFlag;}
+
 }
