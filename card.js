@@ -4,3 +4,4 @@ export class Card{
         this.img = img;
     }
 }
+
