@@ -39,7 +39,6 @@ function addCard(who) {
         default:
             break;
     }
-    console.log(computer.getMydeck());
     deck.plusCounter();
 }
 
@@ -47,7 +46,6 @@ function addCard(who) {
 function humanProces() {
     //bjが成立しているか確かめる
     human.checkBJ();
-    console.log(`human.getbjFlag():${human.getbjFlag()}`);
     if (human.getbjFlag()==true) {
         // カードをもらうボタンを無効化
         $moreCardButton.disabled = true;
@@ -72,13 +70,15 @@ function humanProces() {
 //コンピューターの処理
 function computerProcess() {
     while (true) {
+        computer.checkAInMyDeck();
+        computer.sumCard();
+        computer.sumCardAIn();
+        
         computer.checkBJ();
         if (computer.getbjFlag()==true) {
             print.changeComputerInfo(`ブラックジャック!`);
             break;
         }
-        computer.sumCard();
-        computer.sumCardAIn();
         computer.checkBurst();
         computer.checkBurstAIn();
         if (computer.getburstFlag() == true) {
