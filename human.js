@@ -1,5 +1,5 @@
-import { player } from "./player";
+import { Player } from "./Player.js";
 
-class human extends player{
+export class Human extends Player{
     
 }
