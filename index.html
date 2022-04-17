@@ -5,12 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
   <h1></h1>
-  <img src="" alt="" id="humanCard1">
-  <p id="text"></p>
-  <script src="./Card.js" type="module"></script>
-  <script src="./Deck.js" type="module"></script>
-  <script src="./Main.js" type="module"></script>
+  <h2>相手のカード</h2>
+  <p id="computerInfo">--</p>
+  <p id="computerSum">--</p>
+  <div class="computerCard">
+    <img src="" alt="" id="computerCard7" name="computerCard">
+    <img src="" alt="" id="computerCard5" name="computerCard">
+    <img src="" alt="" id="computerCard3" name="computerCard">
+    <img src="./img/bk0.png" alt="" id="computerCard1" name="computerCard">
+    <img src="./img/bk0.png" alt="" id="computerCard2" name="computerCard">
+    <img src="" alt="" id="computerCard4" name="computerCard">
+    <img src="" alt="" id="computerCard6" name="computerCard">
+    <img src="" alt="" id="computerCard8" name="computerCard">
+  </div>
+
+  <p id="info">--</p>
+
+  <h2>あなたのカード</h2>
+  <div class="humanCard">
+    <img src="" alt="" id="humanCard7" name="humanCard">
+    <img src="" alt="" id="humanCard5" name="humanCard">
+    <img src="" alt="" id="humanCard3" name="humanCard">
+    <img src="./img/bk0.png" alt="" id="humanCard1" name="humanCard">
+    <img src="./img/bk0.png" alt="" id="humanCard2" name="humanCard">
+    <img src="" alt="" id="humanCard4" name="humanCard">
+    <img src="" alt="" id="humanCard6" name="humanCard">
+    <img src="" alt="" id="humanCard8" name="humanCard">
+  </div>
+  <p id="humanSum"></p>
+  <p id="humanInfo">カードをもらいますか</p>
+  <button id="moreCard">カードをもらう</button>
+  <button id="fight">勝負!</button>
+  <button id="reset">もう一回!</button>
+
+  <script src="./Card.js"   type="module"></script>
+  <script src="./Deck.js"   type="module"></script>
+  <script src="./Player.js" type="module"></script>
+  <script src="./Computer.js" type="module"></script>
+  <script src="./Human.js"  type="module"></script>
+  <script src="./Print.js"  type="module"></script>
+  <script src="./Main.js"   type="module"></script>
+  
 </body>
 </html>

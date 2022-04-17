@@ -10,6 +10,7 @@ export class Player{
         this.AInMyDeckFlag =false;
         this.tenInMyDeckFlag = false;
         this.burstFlag=false;
+        this.burstAInFlag=false;
         this.bjFlag =false;
 
     }
@@ -19,15 +20,16 @@ export class Player{
 
     //myDeck内のカードの合計を計算
     sumCard(){
-        this.sum=0;
+        this.sum=0; //一回リセットしてから
         for (let i = 0; i < this.myDeck.length; i++) {this.sum+=this.myDeck[i].value;}
     }
 
     //myDeck内にAがある時の計算
     sumCardAIn(){
-        if (this.AInMyDeckFlag == true) {
+        console.log(`this.AInMyDeckFlag:${this.AInMyDeckFlag}`);
+        if (this.AInMyDeckFlag === true) {
             this.sumAIn = 0; //一回リセットしてから
-            this.sumAIn = this.sum + 11;
+            this.sumAIn = this.sum + 10;
         }
     }
 
@@ -35,7 +37,7 @@ export class Player{
     //myDeckの中にAが入っているか確認する
     checkAInMyDeck(){
         for (let i = 0; i < this.myDeck.length; i++) {
-            if (this.myDeck[i].value==1) {
+            if (this.myDeck[i].value == 1) {
                 this.AInMyDeckFlag=true;
                 return;
             }
@@ -60,14 +62,22 @@ export class Player{
         this.checkTenInMyDeck();
         if (this.myDeck.length==2 &&
             this.AInMyDeckFlag == true &&
-            this.tenInMyDeckFlag==true) {this.bjFlag = true;}
+            this.tenInMyDeckFlag==true) {
+                this.bjFlag = true;
+                return;
+            }
         this.bjFlag = false;
     }
 
     //自分がバーストしているか調べる
     checkBurst(){
         if (this.sum > 21) {this.burstFlag = true;}
-        this.burstFlag = false;
+        else {this.burstFlag = false;}
+    }
+
+    checkBurstAIn(){
+        if (this.sumAIn > 21) {this.burstAInFlag = true;}
+        else{this.burstAInFlag = false;}
     }
 
     //ゲッター
@@ -75,6 +85,9 @@ export class Player{
     getAInMyDeckFlag(){return this.AInMyDeckFlag;}
     gettenInMyDeckFlag(){return this.tenInMyDeckFlag;}
     getburstFlag(){return this.burstFlag;}
+    getburstAInFlag(){return this.burstAInFlag;}
     getbjFlag(){return this.bjFlag;}
+    getSum(){return this.sum;}
+    getSumAIn(){return this.sumAIn;}
 
 }
