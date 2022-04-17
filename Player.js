@@ -26,7 +26,6 @@ export class Player{
 
     //myDeck内にAがある時の計算
     sumCardAIn(){
-        console.log(`this.AInMyDeckFlag:${this.AInMyDeckFlag}`);
         if (this.AInMyDeckFlag === true) {
             this.sumAIn = 0; //一回リセットしてから
             this.sumAIn = this.sum + 10;
