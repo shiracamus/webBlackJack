@@ -44,6 +44,8 @@ function addCard(who) {
 
 //人間の処理
 function humanProces() {
+    human.sumCard();
+    human.sumCardAIn();
     //bjが成立しているか確かめる
     human.checkBJ();
     if (human.getbjFlag()==true) {
@@ -51,8 +53,6 @@ function humanProces() {
         $moreCardButton.disabled = true;
         print.changeHumanInfo(`ブラックジャック!`);
     }
-    human.sumCard();
-    human.sumCardAIn();
 
     //バーストしているか確かめる
     human.checkBurst();
@@ -70,7 +70,6 @@ function humanProces() {
 //コンピューターの処理
 function computerProcess() {
     while (true) {
-        computer.checkAInMyDeck();
         computer.sumCard();
         computer.sumCardAIn();
 
