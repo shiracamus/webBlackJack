@@ -1,12 +1,12 @@
 import {Deck} from "./Deck.js";
 import {Computer} from './Computer.js';
-import {Human} from './Human.js';
 import {Print} from './Print.js';
+import { Player } from "./Player.js";
 
 //オブジェクト生成
 const deck = new Deck();
 const computer = new Computer();
-const human = new Human();
+const human = new Player();
 const print = new Print();
 
 //ボタン類
@@ -73,7 +73,7 @@ function computerProcess() {
         computer.checkAInMyDeck();
         computer.sumCard();
         computer.sumCardAIn();
-        
+
         computer.checkBJ();
         if (computer.getbjFlag()==true) {
             print.changeComputerInfo(`ブラックジャック!`);
@@ -87,6 +87,8 @@ function computerProcess() {
         }
         if (computer.isSumUnder16AIn() == false) {break;}
         if (computer.isSumUnder16() == false) {break;}
+
+        //カードを引くのをやめなければいけない要素をすべて満たさない時にやっとカードを引く
         addCard("C");
     }
     changeComputerDisp();
