@@ -25,8 +25,6 @@ function ini() {
     $resetButton.disabled = true;
 }
 
-
-
 //引数で分岐､カードを追加したあとカウンターを動かす
 function addCard(who) {
     switch (who) {
@@ -112,7 +110,8 @@ function judge() {
         }
     }
     //コンピューターだけがbjだった
-    if (computer.getbjFlag() == true && human.getbjFlag() == false) {
+    //&& human.getbjFlag() == falseと書く必要はない前のifでhuman.getbjFlag() == false だと証明ずみ
+    if (computer.getbjFlag() == true ) {
         print.changeInfo("あなたの負け");
         return;
     }
