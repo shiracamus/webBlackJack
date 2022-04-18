@@ -9,7 +9,7 @@ export class Computer extends Player{
         return false;
     }
 
-    isSumUnder16AIn(){
+    isSumAInUnder16(){
         if (this.sumAIn < 16) { return true;}
         return false;
     }

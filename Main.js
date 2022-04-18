@@ -78,13 +78,15 @@ function computerProcess() {
             print.changeComputerInfo(`ブラックジャック!`);
             break;
         }
+
         computer.checkBurst();
         computer.checkBurstAIn();
         if (computer.getburstFlag() == true) {
             print.changeComputerInfo(`バーストしました`);
             break;
         }
-        if (computer.isSumUnder16AIn() == false) {break;}
+
+        if (computer.isSumAInUnder16() == false) {break;}
         if (computer.isSumUnder16() == false) {break;}
 
         //カードを引くのをやめなければいけない要素をすべて満たさない時にやっとカードを引く
