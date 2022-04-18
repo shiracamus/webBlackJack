@@ -26,6 +26,7 @@ export class Player{
 
     //myDeck内にAがある時の計算
     sumCardAIn(){
+        this.checkAInMyDeck();//<-これを先に動かさないと色々不便
         if (this.AInMyDeckFlag === true) {
             this.sumAIn = 0; //一回リセットしてから
             this.sumAIn = this.sum + 10;
