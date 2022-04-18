@@ -135,8 +135,10 @@ function judge() {
     //変数下準備
     var humanSum = 0;
     var computerSum = 0;
+    
     if (human.getSumAIn() <=21 && human.getSum() < human.getSumAIn())  { humanSum =human.getSumAIn(); }
     else {humanSum =human.getSum();}
+
     if (computer.getSumAIn() <=21 && computer.getSum() < computer.getSumAIn())  { computerSum =computer.getSumAIn(); }
     else {computerSum =computer.getSum();}
 
