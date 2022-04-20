@@ -75,10 +75,12 @@ class BlackJack {
     -Deck deck
     -Player human
     -Computer computer
+    -PlayerView humanView
+    -PlayerView computerView
     +void play()
     -void playHuman()
     -void playComputer()
-    -judge()
+    -void judge()
 }
 
 class PlayerView {
