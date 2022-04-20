@@ -1,93 +1,53 @@
-export class Player{
-    constructor() {
-        this.myDeck = [];
-        this.sum = 0;
-        this.sumAIn = 0;
+export class Player {
 
-        //フラグ
-        //今回は全部フラグで管理しようと思う -> 統一性を持たせるため
-        //全部ゲッターでとる
-        this.AInMyDeckFlag =false;
-        this.tenInMyDeckFlag = false;
-        this.burstFlag=false;
-        this.burstAInFlag=false;
-        this.bjFlag =false;
-
+    constructor(name) {
+        this._name = name;
+        this._cards = [];
     }
 
-    //引数に受け取ったカードを加える
-    addCard(card){this.myDeck.push(card);}
-
-    //myDeck内のカードの合計を計算
-    sumCard(){
-        this.sum=0; //一回リセットしてから
-        for (let i = 0; i < this.myDeck.length; i++) {this.sum+=this.myDeck[i].value;}
+    get name() {
+        return this._name;
     }
 
-    //myDeck内にAがある時の計算
-    sumCardAIn(){
-        this.checkAInMyDeck();//<-これを先に動かさないと色々不便
-        if (this.AInMyDeckFlag === true) {
-            this.sumAIn = 0; //一回リセットしてから
-            this.sumAIn = this.sum + 10;
+    hold(card) {
+        this._cards.push(card);
+    }
+
+    firstCard() {
+        return this._cards[0];
+    }
+
+    forEachCard(callback) {
+        return this._cards.forEach(callback);
+    }
+
+    score() {
+        let total = this._cards.reduce((total, card) => total + Math.min(card.rank, 10), 0);
+        if (total <= 11 && this.hasAce()) {
+            total += 10;
         }
+        return total;
     }
 
-
-    //myDeckの中にAが入っているか確認する
-    checkAInMyDeck(){
-        for (let i = 0; i < this.myDeck.length; i++) {
-            if (this.myDeck[i].value == 1) {
-                this.AInMyDeckFlag=true;
-                return;
-            }
-        }
-        this.AInMyDeckFlag=false;
+    hasAce() {
+        return this._cards.some(card => card.rank == 1);
     }
 
-    //myDeckの中に10札が入っているか確認する
-    checkTenInMyDeck(){
-        for (let i = 0; i < this.myDeck.length; i++) {
-            if (this.myDeck[i].value==10) {
-                this.tenInMyDeckFlag=true;
-                return;
-            }
-        }
-        this.tenInMyDeckFlag=false;
+    hasTen() {
+        return this._cards.some(card => card.rank >= 10);
     }
 
-    //BJを達成しているか確認調べる
-    checkBJ(){
-        this.checkAInMyDeck();
-        this.checkTenInMyDeck();
-        if (this.myDeck.length==2 &&
-            this.AInMyDeckFlag == true &&
-            this.tenInMyDeckFlag==true) {
-                this.bjFlag = true;
-                return;
-            }
-        this.bjFlag = false;
+    isBlackJack() {
+        return this._cards.length == 2 && this.hasAce() && this.hasTen();
     }
 
-    //自分がバーストしているか調べる
-    checkBurst(){
-        if (this.sum > 21) {this.burstFlag = true;}
-        else {this.burstFlag = false;}
+    isBust() {
+        return this.score() > 21;
     }
+}
 
-    checkBurstAIn(){
-        if (this.sumAIn > 21) {this.burstAInFlag = true;}
-        else{this.burstAInFlag = false;}
+export class Computer extends Player {
+    hit() {
+        return this.score() < 16;
     }
-
-    //ゲッター
-    getMydeck(){return this.myDeck;}
-    getAInMyDeckFlag(){return this.AInMyDeckFlag;}
-    gettenInMyDeckFlag(){return this.tenInMyDeckFlag;}
-    getburstFlag(){return this.burstFlag;}
-    getburstAInFlag(){return this.burstAInFlag;}
-    getbjFlag(){return this.bjFlag;}
-    getSum(){return this.sum;}
-    getSumAIn(){return this.sumAIn;}
-
 }

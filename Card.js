@@ -1,7 +1,8 @@
-export class Card{
-    constructor(value,img){
-        this.value = value;
-        this.img = img;
+export class Card {
+
+    constructor(rank, image) {
+        this.rank = rank;
+        this.image = image;
     }
 }
 
