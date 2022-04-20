@@ -51,11 +51,11 @@ class Card {
 class Deck {
     -Card[] cards
     +void refill()
+    -void shuffle()
     +Card draw()
 }
 
 class Player {
-    +string name
     -Card[] _cards
     +void hold(Card card)
     +Card firstCard()
@@ -89,7 +89,7 @@ class PlayerView {
     +void showCard()
     -void showCards()
     -void showScore()
-    -void showStatus()
+    -void showInfo()
 }
 
 Computer --|> Player : extends

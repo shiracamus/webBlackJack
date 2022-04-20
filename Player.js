@@ -1,12 +1,7 @@
 export class Player {
 
-    constructor(name) {
-        this._name = name;
+    constructor() {
         this._cards = [];
-    }
-
-    get name() {
-        return this._name;
     }
 
     hold(card) {

@@ -1,14 +1,13 @@
 export class PlayerView {
 
-    constructor(player) {
+    constructor(player, name) {
         this.player = player;
-        const cards = [];
+        this.$cards = [];
         for (let i = 1; i <= 8; i++) {
-            cards.push(document.getElementById(`${player.name}Card${i}`));
+            this.$cards.push(document.getElementById(`${name}Card${i}`));
         }
-        this.$cards = cards;
-        this.$score = document.getElementById(`${player.name}Score`);
-        this.$info = document.getElementById(`${player.name}Info`);
+        this.$score = document.getElementById(`${name}Score`);
+        this.$info = document.getElementById(`${name}Info`);
     }
 
     showCard() {
@@ -25,7 +24,7 @@ export class PlayerView {
         this.$score.textContent = this.player.score();
     }
 
-    showStatus() {
+    showInfo() {
         if (this.player.isBlackJack()) {
             this.$info.textContent = `ブラックジャック!`;
         } else if (this.player.isBust()) {
@@ -36,6 +35,6 @@ export class PlayerView {
     show() {
         this.showCards();
         this.showScore();
-        this.showStatus();
+        this.showInfo();
     }
 }

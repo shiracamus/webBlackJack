@@ -3,10 +3,10 @@ import { Player, Computer } from './Player.js';
 import { PlayerView } from "./PlayerView.js";
 
 const deck = new Deck();
-const human = new Player('human');
-const computer = new Computer('computer');
-const humanView = new PlayerView(human);
-const computerView = new PlayerView(computer);
+const human = new Player();
+const computer = new Computer();
+const humanView = new PlayerView(human, 'human');
+const computerView = new PlayerView(computer, 'computer');
 
 const $hitButton = document.getElementById("hit");
 const $standButton = document.getElementById("stand");
