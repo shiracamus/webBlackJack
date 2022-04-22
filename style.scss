@@ -1,0 +1,16 @@
+$mainColum:2/5;
+
+
+h1{
+    text-align: center;
+}
+
+.main{
+    display: grid;
+    // width: 80%;
+    // grid-template-rows:10% 80% 10%;
+    grid-template-columns:10% 20% 20% 20% 20% 10%;
+    h2{
+        grid-column:$mainColum;
+    }
+}
