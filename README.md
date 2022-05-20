@@ -1,6 +1,9 @@
 # webBlackJack-jsOnly-
 単純にjavaScriptだけでブラックジャックを作ってみた
 
+## url
+https://s19013.github.io/webBlackJack-jsOnly-/
+
 ### 設計書?みたいなものも作ってみた
 * https://qiita.com/hideya670/items/57395a4edde5923c5c9f
 * https://qiita.com/hideya670/items/40b8420769a575bc0152
