@@ -10,6 +10,9 @@ https://s19013.github.io/webBlackJack-jsOnly-/
 * https://qiita.com/hideya670/items/43dea317d718a886d7cc
 * https://qiita.com/hideya670/items/9ec036d3c92c09944672
 
+## 今後
+vue.jsで書き直す予定
+
 FAQ
 Q:なぜ作った?<br>
 A:
